@@ -1,0 +1,13 @@
+name: messfern_env
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9,python<3.14
+  - pip
+  - netcdf4
+  - pip:
+    - -r requirements.txt
+
+# Note: Using `mamba` (from conda-forge) speeds up installation and resolves packages reliably on macOS/Windows.
+# To create this environment with mamba:
+#   mamba env create -f environment.yml
