@@ -38,7 +38,7 @@ def test_notebook_executes_without_errors():
         
         # Copy required files
         for src_dir in ["data", "modules"]:
-            src_path = Path(f"../{src_dir}")
+            src_path = Path(src_dir)
             if src_path.exists():
                 dst_path = temp_path / src_dir
                 shutil.copytree(src_path, dst_path)
@@ -77,9 +77,10 @@ def test_function_works_correctly():
         
         # Copy required files
         for src_dir in ["data", "modules"]:
-            src_path = Path(f"../{src_dir}")
+            src_path = Path(src_dir)
             if src_path.exists():
-                shutil.copytree(src_path, src_path.name, dirs_exist_ok=True)
+                dst_path = temp_path / src_dir
+                shutil.copytree(src_path, dst_path)
         
         (temp_path / "figures").mkdir(exist_ok=True)
         
