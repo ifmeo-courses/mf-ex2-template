@@ -27,6 +27,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
+    - name: Install Jupyter kernel
+      run: |
+        python -m ipykernel install --user --name python3
+        
     - name: Run Tests
       run: |
-        python -m pytest tests/ -v
+        cd src
+        python -m pytest ../tests/ -v
