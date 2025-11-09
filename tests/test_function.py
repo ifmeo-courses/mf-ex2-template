@@ -13,7 +13,7 @@ from pathlib import Path
 
 def test_bathymetry_data_available():
     """Test that bathymetry data is available for function testing."""
-    data_file = Path("../data/bathymetry_subset.nc")
+    data_file = Path("data/bathymetry_subset.nc")
     assert data_file.exists(), "Bathymetry data file required for function testing"
 
 
@@ -21,7 +21,7 @@ def test_function_with_known_locations():
     """Test get_depth_at_location function with 5 known coordinates and depths."""
     
     # Load the bathymetry data (same as student will do)
-    data_file = Path("../data/bathymetry_subset.nc")
+    data_file = Path("data/bathymetry_subset.nc")
     if not data_file.exists():
         pytest.skip("Bathymetry data not available")
     

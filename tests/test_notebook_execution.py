@@ -20,7 +20,7 @@ import re
 
 def test_notebook_executes_without_errors():
     """Test that the assignment notebook runs completely without errors."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     assert notebook_path.exists(), "Assignment notebook not found"
     
     # Load the notebook
@@ -59,7 +59,7 @@ def test_notebook_executes_without_errors():
 
 def test_function_works_correctly():
     """Test that the student's get_depth_at_location function returns correct depths."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
     
@@ -150,7 +150,7 @@ print("Function test results:", function_test_results)
 
 def test_function_exists_and_callable():
     """Test that the student defined a callable get_depth_at_location function."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
     
@@ -183,7 +183,7 @@ def test_function_exists_and_callable():
 
 def test_notebook_removes_notimplementederror():
     """Test that student removed all NotImplementedError statements."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
     

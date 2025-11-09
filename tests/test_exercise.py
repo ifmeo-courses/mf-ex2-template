@@ -31,13 +31,13 @@ def test_imports_work():
 
 def test_notebook_exists():
     """Test that the assignment notebook exists."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     assert notebook_path.exists(), "src/assignment.ipynb file not found"
 
 
 def test_data_files_exist():
     """Test that required data files exist."""
-    data_dir = Path("../data")
+    data_dir = Path("data")
     assert data_dir.exists(), "data directory not found"
     
     bathymetry_file = data_dir / "bathymetry_subset.nc"
@@ -46,7 +46,7 @@ def test_data_files_exist():
 
 def test_modules_exist():
     """Test that required modules exist."""
-    modules_dir = Path("../modules")
+    modules_dir = Path("modules")
     assert modules_dir.exists(), "modules directory not found"
     
     bathymetry_module = modules_dir / "bathymetry.py"
@@ -58,11 +58,11 @@ def test_modules_exist():
 
 def test_bathymetry_data_loading():
     """Test that bathymetry data can be loaded and has expected structure."""
-    if not Path("../data/bathymetry_subset.nc").exists():
+    if not Path("data/bathymetry_subset.nc").exists():
         pytest.skip("Bathymetry data file not found")
     
     # Test loading with xarray
-    ds = xr.open_dataset("../data/bathymetry_subset.nc")
+    ds = xr.open_dataset("data/bathymetry_subset.nc")
     
     # Check required variables
     assert 'z' in ds.data_vars, "Depth variable 'z' not found in dataset"

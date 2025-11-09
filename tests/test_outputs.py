@@ -14,7 +14,7 @@ import matplotlib.image as mpimg
 
 def test_student_information_completed():
     """Test that student filled in their personal information."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
     
@@ -47,13 +47,13 @@ def test_student_information_completed():
 
 def test_bathymetry_data_exists():
     """Test that bathymetry data file exists."""
-    data_file = Path("../data/bathymetry_subset.nc")
+    data_file = Path("data/bathymetry_subset.nc")
     assert data_file.exists(), "Required bathymetry data file (bathymetry_subset.nc) not found"
 
 
 def test_bathymetry_data_valid():
     """Test that bathymetry data contains expected variables and values."""
-    data_file = Path("../data/bathymetry_subset.nc")
+    data_file = Path("data/bathymetry_subset.nc")
     if not data_file.exists():
         pytest.skip("Bathymetry data file not found")
     
@@ -75,7 +75,7 @@ def test_bathymetry_data_valid():
 
 def test_all_figures_created():
     """Test that all 3 required figures were created."""
-    figures_dir = Path("../figures/")
+    figures_dir = Path("figures/")
     if not figures_dir.exists():
         pytest.skip("Figures directory not found")
     
@@ -97,7 +97,7 @@ def test_all_figures_created():
 
 def test_figures_contain_data():
     """Test that figures actually contain plotted data (not just empty plots)."""
-    figures_dir = Path("../figures/")
+    figures_dir = Path("figures/")
     if not figures_dir.exists():
         pytest.skip("Figures directory not found")
     
@@ -122,7 +122,7 @@ def test_figures_contain_data():
 
 def test_figure_file_sizes():
     """Test that figure files have reasonable sizes (not tiny empty files)."""
-    figures_dir = Path("../figures/")
+    figures_dir = Path("figures/")
     if not figures_dir.exists():
         pytest.skip("Figures directory not found")
     
@@ -136,7 +136,7 @@ def test_figure_file_sizes():
 
 def test_figure1_matplotlib_contour():
     """Test that Figure 1 is a matplotlib contour plot."""
-    figures_dir = Path("../figures/")
+    figures_dir = Path("figures/")
     if not figures_dir.exists():
         pytest.skip("Figures directory not found")
     
@@ -180,7 +180,7 @@ def test_figure2_cartopy_map():
 
 def test_figure3_enhanced_cartopy():
     """Test that Figure 3 is an enhanced cartopy map."""
-    figures_dir = Path("../figures/")
+    figures_dir = Path("figures/")
     if not figures_dir.exists():
         pytest.skip("Figures directory not found")
     
@@ -206,7 +206,7 @@ def test_figure3_enhanced_cartopy():
 
 def test_modules_directory_exists():
     """Test that the modules directory with bathymetry.py exists."""
-    modules_dir = Path("../modules/")
+    modules_dir = Path("modules/")
     assert modules_dir.exists(), "Modules directory not found"
     
     bathymetry_module = modules_dir / "bathymetry.py"
@@ -221,11 +221,11 @@ def test_student_function_exists():
     # Import the assignment module if it was executed
     try:
         import sys
-        sys.path.append('../src')
+        sys.path.append('src')
         
         # Try to run a minimal check - this is a basic test
         # A more complete test would require executing the notebook
-        notebook_path = Path("../src/assignment.ipynb")
+        notebook_path = Path("src/assignment.ipynb")
         if not notebook_path.exists():
             pytest.skip("Assignment notebook not found")
             
@@ -247,7 +247,7 @@ def test_student_function_exists():
 
 def test_ds2_mooring_location():
     """Test that DS2 mooring coordinates are correctly used."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
         
@@ -262,7 +262,7 @@ def test_ds2_mooring_location():
 
 def test_function_parameters_docstring():
     """Test that the function has proper documentation."""
-    notebook_path = Path("../src/assignment.ipynb")
+    notebook_path = Path("src/assignment.ipynb")
     if not notebook_path.exists():
         pytest.skip("Assignment notebook not found")
         
